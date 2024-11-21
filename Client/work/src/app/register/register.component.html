@@ -1,0 +1,18 @@
+<div class="form-container">
+  <h2>{{ 'REGISTER' | translate }}</h2>
+  <form #form1="ngForm" (ngSubmit)="regdata(form1.value)">
+    <input type="text" name="first_name" placeholder="{{ 'FIRST_NAME' | translate }}" ngModel>
+    <input type="text" name="last_name" placeholder="{{ 'LAST_NAME' | translate }}" ngModel>
+    <input type="text" name="username" placeholder="{{ 'USERNAME' | translate }}" ngModel>
+    <input type="email" name="email" placeholder="{{ 'EMAIL' | translate }}" ngModel>
+    <input type="number" name="mobilenumber" placeholder="{{ 'MOBILE_NUMBER' | translate }}" ngModel>
+
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="female" ngModel>  {{ 'FEMALE' | translate }}</label>
+      <label><input type="radio" name="gender" value="male" ngModel> {{ 'MALE' | translate }}</label>
+    </div>
+
+    <input type="password" name="password" placeholder="{{ 'PASSWORD' | translate }}" ngModel>
+    <button type="submit">{{ 'REGISTER' | translate }}</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<div class="login-container">
+<h2>{{ 'LOGIN' | translate }}</h2>
+  <form #form1="ngForm" (ngSubmit)="login(form1.value)" class="login-form">
+    <input type="text" name="username" placeholder="{{ 'USER_NAME' | translate }}" ngModel>
+    <input type="password" name="password" placeholder="{{ 'PASSWORD' | translate  }}" ngModel>
+    <button type="submit">{{ 'LOGIN' | translate }}</button>
+  </form>
+</div>

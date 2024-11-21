@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#" style="color: aliceblue;">ThoughtNest</a>
+    <ul class="navbar-nav ml-auto">
+      <!-- <li class="nav-item" ><a class="nav-link" style="color: aliceblue;" routerLink="reg">Register</a></li> -->
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a class="nav-link" style="color: aliceblue;" routerLink="reg">Register</a>
+      </li>
+      <!-- <li class="nav-item"><a class="nav-link" routerLink="log" style="color: aliceblue;">Login</a></li> -->
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a class="nav-link" style="color: aliceblue;" routerLink="log">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <span class="nav-link" style="color: aliceblue;">
+          Welcome, {{ userData.first_name }} {{ userData.last_name }}
+        </span>
+      </li>
+
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      </li>
+      <!-- <li class="nav-item" ><a class="nav-link" routerLink="index">{{ data.first_name }}</a></li> -->
+      <!-- <li class="nav-item" ><button class="btn btn-outline-danger">Logout</button></li> -->
+    </ul>
+</nav>
+<router-outlet></router-outlet>
+
+<footer>
+</footer>
+
+
+<!-- <div class="container "> -->
+<!-- <p>{{ 'WELCOME' | translate }}</p>
+<p>{{ 'HELLO' | translate }}</p>
+<p>{{ 'GREETING' | translate }}</p>
+
+<p>{{ 'REGISTER' | translate }}</p>
+<p>Amount: {{ formattedAmount }}</p>
+<p>Currency: {{ formattedCurrency }}</p>
+<p>Date: {{ formattedDate }}</p> 
+
+</div> -->
+
+<div class="container py-4">
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary m-2" (click)="changeLanguage('en')">English</button>
+    <button type="button" class="btn btn-secondary m-2"  (click)="changeLanguage('fr')">French</button>
+    <button type="button" class="btn btn-success m-2" (click)="changeLanguage('ml')">Malayalam</button>
+    <button type="button" class="btn btn-danger m-2" (click)="changeLanguage('hi')">Hindi</button>
+
+  </div>
+</div>
+<router-outlet></router-outlet>
